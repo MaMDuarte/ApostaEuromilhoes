@@ -45,6 +45,7 @@ public class ApostaEuromilhoes {
 	 * Cria um objecto <code>ApostaEuromilhoes</code> com números e estrelas gerados aleatóriamente
 	 * 
 	 */
+	
 	public ApostaEuromilhoes() {
 		
 		Random rnd = new Random();
@@ -56,6 +57,7 @@ public class ApostaEuromilhoes {
 		
 		// Gera 5 numeros aleatórios diferentes entre 1 e 50
 		numeros[0] = rnd.nextInt(50) + 1;
+		
 		i=1;
 		while ( i < 5)
 		{
@@ -69,6 +71,7 @@ public class ApostaEuromilhoes {
 		
 		// Gera 2 numeros aleatórios diferentes entre 1 e 12
 		estrelas[0] = rnd.nextInt(12) + 1;
+		
 		i=1;
 		while ( i < 2)
 		{
@@ -103,10 +106,10 @@ public class ApostaEuromilhoes {
 		// Os numeros tem de estar no intervalo de 1 a 50
 		for( int numero: numeros)
 		{
-			if( numero<0 || numero>50)
+			if( numero<=0 || numero>50)
 				throw new IllegalArgumentException("Numeros têm de estar entre 1 e 50");
 		}
-		
+				
 		// Nao podem haver numeros iguais
 		for ( int i=0; i < 4; i++ )
 		{
@@ -124,7 +127,7 @@ public class ApostaEuromilhoes {
 		// As estrelas tem de estar no intervalo de 1 a 12
 		for( int estrela: estrelas)
 		{
-			if( estrela<0 || estrela>12)
+			if( estrela<=0 || estrela>12)
 				throw new IllegalArgumentException("Estrelas têm de estar entre 1 e 12");
 		}
 		
